@@ -1,31 +1,17 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, View, Image, Text, ScrollView } from "react-native";
-import { getLatestGames } from "./lib/metacritic";
-import { useEffect, useState } from "react";
+import { StyleSheet, View } from "react-native";
+import constants from "expo-constants";
+import { Main } from "./component/main";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 export default function App() {
-  const [games, setGames] = useState([]);
-
-  useEffect(() => {
-    getLatestGames().then((games) => {
-      setGames(games);
-    });
-  }, []);
-
   return (
-    <View style={styles.container}>
-      <StatusBar style="light" />
-      <ScrollView>
-        {games.map((game) => (
-          <View key={game.slug} style={styles.card}>
-            <Image source={{ uri: game.image }} style={styles.image} />
-            <Text style={styles.title}>{game.title}</Text>
-            <Text style={styles.description}>{game.description}</Text>
-            <Text style={styles.score}>{game.score}</Text>
-          </View>
-        ))}
-      </ScrollView>
-    </View>
+    <SafeAreaProvider>
+      <View style={styles.container}>
+        <StatusBar style="light" />
+        <Main />
+      </View>
+    </SafeAreaProvider>
   );
 }
 
@@ -35,29 +21,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#000",
     alignItems: "center",
     justifyContent: "center",
-  },
-  card: {
-    marginBottom: 10,
-  },
-  image: {
-    width: 107,
-    height: 147,
-    borderRadius: 10,
-  },
-  title: {
-    color: "#fff",
-    fontSize: 20,
-    fontWeight: "bold",
-  },
-  description: {
-    color: "#fff",
-    fontSize: 14,
-    textAlign: "justify",
-  },
-  score: {
-    color: "green",
-    fontSize: 16,
-    fontWeight: "bold",
-    marginTop: 5,
+    paddingHorizontal: 12,
   },
 });
