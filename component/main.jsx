@@ -1,5 +1,4 @@
-import { StatusBar } from "expo-status-bar";
-import { View, ScrollView } from "react-native";
+import { View, ScrollView, ActivityIndicator } from "react-native";
 import { getLatestGames } from "../lib/metacritic";
 import { useEffect, useState } from "react";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -17,12 +16,15 @@ export function Main() {
 
   return (
     <View style={{ paddingTop: insets.top, paddingBottom: insets.bottom }}>
-      <StatusBar style="light" />
-      <ScrollView>
-        {games.map((game) => (
-          <GameCard key={game.slug} game={game} />
-        ))}
-      </ScrollView>
+      {games.length === 0 ? (
+        <ActivityIndicator size="large" color="#fff" />
+      ) : (
+        <ScrollView>
+          {games.map((game) => (
+            <GameCard key={game.slug} game={game} />
+          ))}
+        </ScrollView>
+      )}
     </View>
   );
 }
