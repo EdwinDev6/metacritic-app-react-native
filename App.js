@@ -1,6 +1,5 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, View } from "react-native";
-import constants from "expo-constants";
 import { Main } from "./component/main";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
