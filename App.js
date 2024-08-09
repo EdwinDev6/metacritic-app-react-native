@@ -1,6 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, View } from "react-native";
-import { Main } from "./component/main";
+import { Main } from "./components/main";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
 export default function App() {
