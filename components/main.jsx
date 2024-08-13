@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { AnimatedGameCard } from "./GameCard";
 import { Logo } from "./Logo";
-import {Link } from "expo-router";
-import Entypo from '@expo/vector-icons/Entypo';
+import { Link } from "expo-router";
+import Entypo from "@expo/vector-icons/Entypo";
 
 export function Main() {
   const [games, setGames] = useState([]);
@@ -23,9 +23,9 @@ export function Main() {
         <Logo />
       </View>
       <Link asChild href="/about" className="text-blue-400">
-      <Pressable>
-      <Entypo name="info-with-circle" size={24} color="white" />
-      </Pressable>
+        <Pressable>
+          <Entypo name="info-with-circle" size={24} color="white" />
+        </Pressable>
       </Link>
       {games.length === 0 ? (
         <ActivityIndicator size="large" color="#fff" />
