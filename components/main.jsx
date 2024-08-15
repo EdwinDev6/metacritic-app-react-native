@@ -1,15 +1,10 @@
-import { View, ActivityIndicator, FlatList, Pressable } from "react-native";
+import { View, ActivityIndicator, FlatList} from "react-native";
 import { getLatestGames } from "../lib/metacritic";
 import { useEffect, useState } from "react";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { AnimatedGameCard } from "./GameCard";
-import { Logo } from "./Logo";
-import { Link } from "expo-router";
-import Entypo from "@expo/vector-icons/Entypo";
 
 export function Main() {
   const [games, setGames] = useState([]);
-  const insets = useSafeAreaInsets();
 
   useEffect(() => {
     getLatestGames().then((games) => {
