@@ -6,7 +6,7 @@ import { useLocalSearchParams } from "expo-router";
 export default function detail() {
   const { id } = useLocalSearchParams();
   return (
-    <View className=" flex-1 justify-center items-center">
+    <View className=" flex-1 justify-center items-center bg-black">
       <Link asChild href="/" className="text-blue-400 text-xl mt-24">
         <Pressable>
           <AntDesign name="home" size={24} color="white" />

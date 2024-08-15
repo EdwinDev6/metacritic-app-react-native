@@ -18,17 +18,7 @@ export function Main() {
   }, []);
 
   return (
-    <View style={{ paddingTop: insets.top, paddingBottom: insets.bottom }}>
-      <View className="flex-row justify-between items-center mb-4 mx-2">
-        <View>
-        <Logo />
-      </View>
-      <Link asChild href="/about" className="text-blue-400">
-        <Pressable>
-          <Entypo name="info-with-circle" size={24} color="white" />
-        </Pressable>
-      </Link>
-      </View>
+    <View className="bg-black">
       {games.length === 0 ? (
         <ActivityIndicator size="large" color="#fff" />
       ) : (

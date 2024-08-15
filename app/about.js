@@ -5,7 +5,7 @@ import AntDesign from "@expo/vector-icons/AntDesign";
 export default function About() {
   return (
     <ScrollView>
-      <View className=" items-center text-justify">
+      <View className=" items-center text-justify bg-black">
         <Link asChild href="/" className="text-blue-400 text-xl mt-24">
           <Pressable>
             <AntDesign name="home" size={24} color="white" />
