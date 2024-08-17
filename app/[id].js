@@ -2,11 +2,13 @@ import { Text, View, Pressable } from "react-native";
 import { Link } from "expo-router";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import { useLocalSearchParams } from "expo-router";
+import { Screen } from "../components/Screen";
 
-export default function detail() {
+export default function Detail() {
   const { id } = useLocalSearchParams();
   return (
-    <View className=" flex-1 justify-center items-center bg-black">
+    <Screen>
+    <View>
       <Link asChild href="/" className="text-blue-400 text-xl mt-24">
         <Pressable>
           <AntDesign name="home" size={24} color="white" />
@@ -18,5 +20,6 @@ export default function detail() {
         </Text>
       </View>
     </View>
+    </Screen>
   );
 }

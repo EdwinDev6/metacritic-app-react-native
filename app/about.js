@@ -1,11 +1,13 @@
 import { Text, ScrollView, View, Pressable } from "react-native";
 import { Link } from "expo-router";
 import AntDesign from "@expo/vector-icons/AntDesign";
+import { Screen } from "../components/Screen";
 
 export default function About() {
   return (
+    <Screen>
     <ScrollView>
-      <View className=" items-center text-justify bg-black">
+      <View className=" items-center text-justify">
         <Link asChild href="/" className="text-blue-400 text-xl mt-24">
           <Pressable>
             <AntDesign name="home" size={24} color="white" />
@@ -43,5 +45,6 @@ export default function About() {
         </Text>
       </View>
     </ScrollView>
+    </Screen>
   );
 }

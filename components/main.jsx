@@ -1,8 +1,8 @@
-import { View, ActivityIndicator, FlatList} from "react-native";
+import { ActivityIndicator, FlatList} from "react-native";
 import { getLatestGames } from "../lib/metacritic";
 import { useEffect, useState } from "react";
 import { AnimatedGameCard } from "./GameCard";
-
+import { Screen } from "./Screen";
 export function Main() {
   const [games, setGames] = useState([]);
 
@@ -13,7 +13,7 @@ export function Main() {
   }, []);
 
   return (
-    <View className="bg-black">
+    <Screen>
       {games.length === 0 ? (
         <ActivityIndicator size="large" color="#fff" />
       ) : (
@@ -25,6 +25,6 @@ export function Main() {
           )}
         />
       )}
-    </View>
+    </Screen>
   );
 }
