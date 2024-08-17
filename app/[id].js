@@ -1,25 +1,42 @@
-import { Text, View, Pressable } from "react-native";
-import { Link } from "expo-router";
-import AntDesign from "@expo/vector-icons/AntDesign";
+import { Text, View, ActivityIndicator, ScrollView } from "react-native";
 import { useLocalSearchParams } from "expo-router";
 import { Screen } from "../components/Screen";
+import { Stack } from "expo-router";
+import { useState, useEffect } from "react";
+import { getGameDetails } from "../lib/metacritic";
 
 export default function Detail() {
   const { id } = useLocalSearchParams();
+  const [gameInfo, setGameInfo] = useState(null);
+
+  useEffect(() => {
+    if (id) {
+      getGameDetails(id).then(setGameInfo);
+    }
+  }, [id]);
+
   return (
     <Screen>
-    <View>
-      <Link asChild href="/" className="text-blue-400 text-xl mt-24">
-        <Pressable>
-          <AntDesign name="home" size={24} color="white" />
-        </Pressable>
-      </Link>
+      <Stack.Screen
+        options={{
+          headerStyle: { backgroundColor: "#ffee00" },
+          headerTintColor: "black",
+          headerTitle: "Game Details",
+          headerLeft: () => {},
+          headerRight: () => {},
+        }}
+      />
       <View>
-        <Text className="text-white font-bold mb-8 text-2xl">
-          Game title {id}
-        </Text>
+        {gameInfo === null ? (
+          <ActivityIndicator size="large" color="#fff" />
+        ) : (
+         <ScrollView>
+          <Text className="text-white font-bold mb-8 text-2xl">
+            detalles del juego {id}
+            </Text>
+         </ScrollView>
+        )}
       </View>
-    </View>
     </Screen>
   );
 }
