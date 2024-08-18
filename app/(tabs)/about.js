@@ -1,7 +1,7 @@
 import { Text, ScrollView, View, Pressable } from "react-native";
 import { Link } from "expo-router";
 import AntDesign from "@expo/vector-icons/AntDesign";
-import { Screen } from "../components/Screen";
+import { Screen } from "../../components/Screen";
 
 export default function About() {
   return (
