@@ -11,11 +11,11 @@ export default function Layout() {
           headerStyle: { backgroundColor: "black" },
           headerTintColor: "#000",
           headerTitle: "",
-          headerLeft: () => ( <Logo /> ),
+          headerLeft: () => <Logo />,
           headerRight: () => (
-            <Link aschild href="/about">
+            <Link asChild href="/about">
               <Pressable>
-              <Entypo name="info-with-circle" size={24} color="white" />
+                <Entypo name="info-with-circle" size={24} color="white" />
               </Pressable>
             </Link>
           ),
