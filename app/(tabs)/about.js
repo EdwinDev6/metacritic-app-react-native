@@ -1,7 +1,7 @@
 import { Text, ScrollView, View, Pressable } from "react-native";
 import { Link } from "expo-router";
-import AntDesign from "@expo/vector-icons/AntDesign";
 import { Screen } from "../../components/Screen";
+import Entypo from "@expo/vector-icons/Entypo";
 
 export default function About() {
   return (
@@ -10,7 +10,7 @@ export default function About() {
       <View className=" items-center text-justify">
         <Link asChild href="/" className="text-blue-400 text-xl mt-24">
           <Pressable>
-            <AntDesign name="home" size={24} color="white" />
+          <Entypo name="info-with-circle" size={24} color="white" />
           </Pressable>
         </Link>
         <Text className="text-white font-bold mb-8 text-2xl">
