@@ -29,3 +29,12 @@ Run
 ```bash
   npm start
 ```
+
+# Android view from LDPlayer emulator
+![Captura](https://github.com/user-attachments/assets/728ada5f-30bf-4ba0-bee5-9e04fcfd778f)
+![Captura2](https://github.com/user-attachments/assets/7d484772-1aeb-48d4-ae1a-6d1fea192be9)
+![Captura3](https://github.com/user-attachments/assets/02fb8792-d76f-4ee1-96b9-dd396c0cb7f1)
+
+
+
+
